@@ -26,8 +26,12 @@ Próbáld ki a szókincsed különböző nehézségi szinteken, miközben klassz
 ## 🕹️ Telepítés és futtatás
 
 1. **Python 3.x** szükséges  
-2. Klónozd a repót:  
+2. Klónozd a repót:
 
+```bash
+git clone https://github.com/felhasznalonev/akasztofa.git
+cd akasztofa
+```
 ---
 
 ## 🚀 Fejlesztési tervek
@@ -40,6 +44,3 @@ A játék folyamatosan fejlődik! A következő újításokra számíthatsz:
 - ⚡ **Extra funkciók** – Többjátékos mód, pontozás, rekordlista
 
 
-```bash
-git clone https://github.com/felhasznalonev/akasztofa.git
-cd akasztofa
