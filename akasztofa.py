@@ -77,7 +77,12 @@ def guessing_letter(word, guess):
         print(f"Hátralévő próbálkozások: {MAX_TRIES - tries}")
         
         #Milán
-        user_guess = input("Tippelj egy betűt: ").lower()
+        while True:
+            user_guess = input("Tippelj egy betűt: ").lower()
+            if len(user_guess) == 1 and user_guess.isalpha():
+                break
+            else:
+                print("Csak EGY darab BETŰT adj meg!")
         
         if user_guess in used_letters:
             print("Erre már tippeltél!")
@@ -106,6 +111,8 @@ def guessing_letter(word, guess):
     # Végeredmény
     if "".join(guess).lower() == word.lower():
         print("Gratulálok, nyertél!")
+        for i in range(10):
+            time.sleep(10)
     else:
         if platform.system() == "Windows":
             os.system("cls")
