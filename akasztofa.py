@@ -185,4 +185,46 @@ while True:
     # Game loop
     # Milan
     while rnd_while:
-        
+
+        # Témaválasztás
+        print("Témák: könnyű, közepes, nehéz, vegyes, irodalom")
+        choice = str(input("Rendben van, eljött az ideje hogy kiválassza a témát: "))
+        choice = choice.lower()
+
+        #Téma szerint egy véletlenSZERŰ szó kiválasztása
+        if choice == "könnyű" or choice == "konnyu":
+            word = easy()
+            rnd_while = False
+        elif choice == "közepes" or choice == "kozepes":
+            word = medium()
+            rnd_while = False
+        elif choice == "nehéz" or choice == "nehez":
+            word = hard()
+            rnd_while = False
+        elif choice == "vegyes":
+            word = mixed()
+            rnd_while = False
+        elif choice == "irodalom":
+            word = book()
+            rnd_while = False
+        else: 
+            print("Kérlek jól írd be! ")
+    
+    #Konzol törlés (Esztétikai okokból)
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
+    
+    #A kiírandó (amit ki kell találni) kreálása
+    guess = []
+    for x in word:
+        if x in " -:":
+            guess.append(x)
+        else:
+            guess.append("_")
+
+    #A FŐ FŐ function meghívása, itt történik az egész játék
+    guessing_letter(word, guess)
+    
+    #Tesztrész
